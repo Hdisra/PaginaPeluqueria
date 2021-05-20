@@ -1,0 +1,43 @@
+.formulario {
+    width: 100%;//Para que el formulario tome todo el ancho disponible
+}
+
+.campo {
+
+    display: flex;
+    margin-bottom: 2rem;
+    align-items: center;
+
+    label {
+        flex-basis: 10rem;//Para que los labels solo ocupen 10 rem - equivalente a flex: 0 0 10rem
+        flex:  0 0 10rem;
+        color: $blanco;
+    }
+
+    input {
+        flex: 1;//Para que los inputs el espacio que sobra, poniendo que su factor de crecimiento es de 1
+        padding: $separacion / 4;
+        border: none;
+        border-radius: 1rem;
+    }
+
+    /*input[type="text"]{ Para modificar a solo los inputs que sean de tipo text
+        flex: 1;
+    }*/
+    
+}
+
+/*Alerta de la validación del formulario*/
+.alerta {
+
+    color: $blanco;
+    text-align: center;
+    padding: $separacion / 2;
+    width: 100%;
+    display: block;//Para asegurarse de que la alerta apareza debajo de los elementos
+
+    &.error{
+        background-color: red;
+    }
+}
+

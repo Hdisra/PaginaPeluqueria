@@ -11,16 +11,67 @@
 
     <div class="contenedor-estetica">
         <div class="imagen"></div>
-        
+
         <div class="app">
             <header class="header">
                 <h1>App Peluqueria</h1>
             </header>
             <nav class="tabs">
-                <button type="button">Servicios</button>
-                <button type="button">Información Cliente</button>
-                <button type="button">Resumen</button>
+                <button type="button" data-paso="1">Servicios</button><!--Agregando un data(atributo) para el id de paso-1-->
+                <button type="button" data-paso="2">Información Cliente</button>
+                <button type="button" data-paso="3">Resumen</button>
             </nav>
+
+            <!--Inicia contenido-->
+            <div id="paso-1" class="seccion">
+                <h2>Servicios</h2>
+                <p class="text-center">Elige tus Servicios a Continuación</p>
+                <div id="servicios" class="listado-servicios"></div><!--Se generará en JS con Fetch API-->
+            </div>
+
+            <div id="paso-2" class="seccion">
+                <h2>Tus Datos y Cita</h2>
+
+                <p class="text-center">
+                    Coloca tus Datos y Cita
+                </p>
+
+                <!--formulario-->
+                <form class="formulario">
+                    <div class="campo">
+                        <label for="nombre">Nombre</label>
+                        <input type="text" id="nombre" placeholder="Tu Nombre">
+                    </div>
+
+                    <div class="campo">
+                        <label for="fecha">Fecha</label>
+                        <input type="date" id="fecha"><!--con min (min="2021-05-16") colocamos desde donde se elegirá la fecha, pero se realizará con JS-->
+                    </div>
+
+                    <div class="campo">
+                        <label for="hora">Hora</label>
+                        <input type="time" id="hora">
+                    </div>
+
+                </form>
+            </div>
+
+            <div id="paso-3" class="seccion seccion-resumen">
+                <h2>Resumen</h2>
+            </div>
+
+            <!--Paginacion-->
+            <div class="paginacion">
+                <button 
+                    id="anterior" 
+                ><!--Para seleccionarlo con JS-->
+                    &laquo; Anterior <!--Entidad que generará las flechas << -->
+                </button>
+                <button id="siguiente">
+                    Siguiente &raquo; <!-- Entidad que genera las flechas >> -->
+                </button>   
+            </div>
+
         </div>
     </div>
 

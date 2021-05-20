@@ -1,0 +1,26 @@
+.paginacion {
+    
+    display: flex;
+    justify-content: space-between;
+    padding: $separacion 0;
+
+    button {
+        background-color: $azul;
+        display: block;//Para que cada boton tome todo el ancho que tenga disponible
+        padding: 1rem 3rem;
+        color: $blanco;
+        border-style: none;
+        font-weight: $bold;
+        font-size: 2rem;
+        text-transform: uppercase;
+
+        &:hover {
+            cursor: pointer;
+        }
+
+        &.ocultarBoton {
+            // display: none;//Para ocultar el boton que tenga esta clase
+            visibility: hidden;//Para ocultar este boton pero que se conserve su espacio, sin que se recorra el otro botón a otro lado
+        }
+    }
+}

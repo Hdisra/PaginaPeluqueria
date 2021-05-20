@@ -1,6 +1,41 @@
-html{
+body{
     background-color: $negro;
 }
-body{
-    background-color: $gris;
+
+.contenedor-estetica {
+
+    @include tablet {
+        height: 100vh;//Para que este div ocupe todo el tamaño de la pantalla 
+        @include grid(2, $separacion / 2);
+    }
+
+    .imagen {
+        background-image: url(../img/1.jpg);//Se accede desde el build ya que ahi es donde se pasa lo compilado
+        height: 30rem;
+        background-size: cover;//Para cubrir el largo y el ancho disponible
+        background-position: center center;//Centrar la imagen
+        @include tablet {
+            height: auto;//Para que en una tablet la altura se acomode automaticamente
+        }
+    }
+}
+
+.app{
+    margin: 0 auto;
+    width: 95%;
+    padding-top: $separacion / 2;
+
+    .seccion{
+        display: none;//Para que se oculte la informacion de los divs con la clase 'seccion'
+
+        // &:first-of-type{
+        //     display: block;//Para que el primer div sea el unico que se muestre
+        // }
+
+        margin-top: $separacion / 2;
+    }
+}
+
+.mostrar-seccion{
+    display: block!important;//Para que se muestre la seccion que tenga esta clase
 }

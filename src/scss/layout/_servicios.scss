@@ -1,0 +1,48 @@
+.listado-servicios{
+
+
+    @include tablet {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        column-gap: 2rem;
+        row-gap: 2rem;
+        //gap: 2rem; - equivalente a lo de arriba
+
+    }
+
+    .servicio{//Clase generada con js
+        background-color: $blanco;
+        padding: 2rem;
+        border-radius: 1rem;
+
+        margin-bottom: 2rem;
+
+        @include tablet {
+            margin-bottom: 0;
+        }
+
+        p{
+            margin: 0 0 $separacion / 4 0;
+        }
+        .nombre-servicio {
+            color: $negro;
+        }
+    
+        .precio-servicio{
+            color: $azul;
+            font-weight: $bold;
+            margin: 0;
+        }
+
+        //Clase que se crea al seleccionar un servicio
+        &.seleccionado{
+            background-color: $azul;
+            
+            p{
+                color: $blanco;
+            }
+        }
+    }
+
+    
+}
